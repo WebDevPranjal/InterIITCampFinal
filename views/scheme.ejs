@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health schemes</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600&family=Montserrat:wght@100;400;500&display=swap");
+    </style>
+    <link rel="stylesheet" href="/stylesheets/health-scheme.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left-part">Logo</div>
+      <div class="nav-right-part">
+        <ul>
+          <li>Home</li>
+          <li>Complain</li>
+          <li>Find a doctor</li>
+          <li class="nav-active"><a href="/schemes">Health Scheme</a></li>
+          <li><div id="google_translate_element"></div></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- <ul>
+      <% for (let i = 0; i < data.length; i++) { %>
+      <li><a href="<%= data[i].video_link %>"><%= data[i].name %></a></li>
+      <% } %>
+    </ul> -->
+    <section class="section">
+      <% for (let i = 0; i < data.length; i++) { %>
+       <div class="row1">
+          <div class="row-flex">
+              <div class="num">
+                  <%=i+1%>
+              </div>
+              <div class="heading">
+                 <%=data[i].name%> 
+              </div>
+              <div class="down-arrow">
+                  &#x2193
+              </div>
+          </div>
+          <div class="description">
+                <%= data[i].description%>
+                <div class="video">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= data[i].video_link%>" frameborder="0" allow="accelerometer; autoplay encrypted-media; " allowfullscreen></iframe>
+                </div>
+          </div>
+             
+       </div>
+      <% } %>
+      
+      
+    </section>
+
+    
+
+    <script>
+      const divs = document.querySelectorAll('.down-arrow');
+
+function handleDivClick(event) {
+  const clickedDiv = event.target;
+  const parentContainer = clickedDiv.parentNode;
+  const desiredChild = parentContainer.parentNode.children[1]
+  
+  if(desiredChild.style.display == 'none') {
+      desiredChild.style.display = 'block'
+      parentContainer.parentNode.style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+      parentContainer.parentNode.style.borderTop = "4px solid #2b79f6"
+  }else {
+      desiredChild.style.display = 'none'
+      parentContainer.parentNode.style.boxShadow = 'none'
+      parentContainer.parentNode.style.borderTop = 'none'
+  }
+   
+}
+
+divs.forEach(div => {
+  div.addEventListener('click', handleDivClick);
+});
+    </script>
+
+    <!-- Translate Script -->
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>

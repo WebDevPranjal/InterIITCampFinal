@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,html {
+    width: 100%;
+    font-family: 'Montserrat';
+    overflow-x: hidden;
+   
+}
+
+nav {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    /* justify-content:space-between; */
+    padding: 2rem 6rem;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin-left: 28rem;
+}
+
+nav ul li {
+    margin: 0 1.4rem;
+}
+
+nav ul li a {
+    color: #000;
+}
+
+a:visited{
+    color:#000;
+}
+
+.nav-active {
+    font-weight: 800;
+}
+
+section {
+    height: 95vh;
+    margin: 4rem 6rem;
+}
+
+.card {
+    display: flex;
+    height: 30vh;
+    margin: 2rem 0;
+    box-shadow: rgba(197, 200, 204, 0.2) 0px 8px 24px;
+}
+
+.card .left-part {
+    width : 30%;
+    background: silver;
+}
+
+.right-part {
+    background: linear-gradient(90deg, rgba(43,121,246,1) 0%, rgba(70,70,213,1) 100%);
+    width: 70%;
+    padding: 2rem;
+}
+
+.right-part h2,p {
+    padding: 0.2rem 2rem;
+    color : white;
+}
+

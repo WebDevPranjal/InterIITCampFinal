@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignUp Page</title>
+    <title>Document</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;600&family=Montserrat:wght@100;400;500&display=swap');
     </style>
   </head>
   <link rel="stylesheet" href="/stylesheets/loginPage.css">
+
   <body>
     <nav>
       <div class="logo">Logo</div>
@@ -19,24 +20,29 @@
       </div>
     </nav>
     <div class="container">
+     
       <div class="left-container">
         <h1>Infinity Health Care</h1>
         <div class="line"></div>
         <p>We are there to help you</p>
       </div>
       <div class="right-container">
-        <form action="/home" method="post" class="form">
-          <input type="name" name="name" placeholder="NAME" class="details" />
+        <form action="/login" method="post" class="form">
+          <input type="text" name="name" placeholder="Name" class="details" />
           <input
             type="password"
             name="password"
-            placeholder="PASSWORD"
+            placeholder="Password"
             class="details"
           />
-          <button type="submit" class="btn btn-login">Register</button>
+          <button type="submit" class="btn btn-login">Log In</button>
         </form>
-        
+        <div class="btn-alignment">
+          <form action="/register" method="post">
+            <button class="btn btn-login">Register</button>
+          </form>
         </div>
+       
       </div>
     </div>
   </body>
